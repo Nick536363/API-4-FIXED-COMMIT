@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 
 
 def main():
-    parser = ArgumentParser()
+    parser = ArgumentParser(description = "Данный файл скачивает фотографии с сервиса NASA SPACEX")
     parser.add_argument("--folder", type=str, default="images", help="Папка, куда будут скачаны картинки")
     launch_id = "5eb87d47ffd86e000604b38a"
     args = parser.parse_args()
