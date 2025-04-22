@@ -4,8 +4,9 @@ from argparse import ArgumentParser
 from os import getenv
 
 
-def main(api_key):
-    parser = ArgumentParser()
+def main():
+    api_key = getenv("APOD_EPIC_API")
+    parser = ArgumentParser(description = "Данный файл скачивает фотографии с сервиса NASA APOD (Astronomy Picture of the Day)")
     parser.add_argument("--folder", type=str, default="./", help="Папка, куда будут скачаны картинки")
     parser.add_argument("count", type=int, help="Кол-во скачиваемых картинок")
     args = parser.parse_args()
@@ -23,4 +24,4 @@ def main(api_key):
 
 
 if __name__ == "__main__":
-    main(getenv("APOD_EPIC_API"))
+    main()
